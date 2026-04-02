@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>One Talk Kids | Inglés para Niños</title>
+  <meta name="description"
+    content="One Talk Kids: Inglés para el futuro de tus hijos. Gamificación y refuerzo bilingüe. Clases de inglés online, en vivo, con supervisión para padres." />
+  <meta name="keywords"
+    content="ingles para niños, clases de ingles niños, academia de ingles, refuerzo escolar, bilingüismo, One Talk Kids" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="progress-bar"></div>
+  <div id="cursor-glow"></div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-logo kids-logo"><a href="kids.html" class="nav-logo-link"><img
+          src="Imagenes/Onetalk_kids.png" alt="One Talk Kids"
+          onerror="this.src='https://placehold.co/150x40/1F3A5F/FFF?text=One+Talk+Kids'"></a></div>
+    <div class="nav-links">
+      <a href="index.html" style="color:#FFF;font-weight:600;">Adultos/Empresas</a>
+      <a href="#problemas">Retos</a>
+      <a href="#metodo">Solución</a>
+      <a href="#audiencia">Programas</a>
+    </div>
+    <button class="nav-cta" onclick="scroll2Form()">Agenda cortesía →</button>
+    <button class="hamburger" id="ham" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mob-menu" id="mob-menu">
+    <a href="index.html"
+      style="display:block;color:#FFF;font-weight:700;padding:.5rem 0;font-size:.9rem;text-decoration:none">Adultos/Empresas</a>
+    <a href="#problemas"
+      style="display:block;color:rgba(255,255,255,.7);padding:.5rem 0;font-size:.9rem;text-decoration:none">Retos</a>
+    <a href="#metodo"
+      style="display:block;color:rgba(255,255,255,.7);padding:.5rem 0;font-size:.9rem;text-decoration:none">Método y
+      Solución</a>
+    <a href="#audiencia"
+      style="display:block;color:rgba(255,255,255,.7);padding:.5rem 0;font-size:.9rem;text-decoration:none">Programas
+      Kids</a>
+    <button class="nav-cta" style="width:100%;margin-top:1rem;padding:.8rem;font-size:.9rem;display:block;"
+      onclick="scroll2Form(); document.getElementById('mob-menu').classList.remove('open');">Evaluar gratis →</button>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-orb orb1"></div>
+      <div class="hero-orb orb2"></div>
+      <div class="hero-orb orb3"></div>
+      <canvas class="particles" id="particles-canvas"></canvas>
+    </div>
+    <div class="hero-inner">
+      <div class="hero-content r left">
+        <div class="hero-badge">🎮 +100 niños aprendiendo inglés con reportes para papá y mamá</div>
+        <h1>
+          <span class="line1" id="h1-l1">Tu hijo hablará inglés</span>
+          <span class="line2" id="h1-l2">jugando en vivo.</span>
+        </h1>
+        <p class="hero-sub">¿Tu hijo entiende pero no habla? Con la metodología gamificada de One Talk Kids practica inglés en clases 1 a 1 con docentes certificados. Sistema supervisado, con reportes semanales para ti.</p>
+        <div class="hero-btns">
+          <button class="btn-orange" onclick="scroll2Form()">🎮 Quiero la evaluación gratuita para mi hijo</button>
+        </div>
+        <p class="hero-micro">✅ Sin compromiso · Docentes certificados CEFR · Reportes semanales para padres</p>
+      </div>
+      <div class="hero-visual r right">
+        <div style="position:relative">
+          <div class="hero-card-main">
+            <img src="Imagenes/hero_kids.png"
+              alt="Kids learning online with One Talk" loading="lazy" />
+          </div>
+          <div class="hc-badge">
+            <div class="hc-b-icon">🎮</div>
+            <div class="hc-b-text">Aprender jugando<br><span>Gamificación real</span></div>
+          </div>
+          <div class="hero-float-card">
+            <div class="hfc-num">100%</div>
+            <div class="hfc-label">Supervisado por padres</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <div class="sp-bar">
+    <div class="sp-label">Familias en Latam y Norteamérica confían en One Talk Kids</div>
+    <div class="flags-scroll">
+      <div class="flag-chip r up d1"><img src="https://flagcdn.com/w40/co.png" alt="Colombia" class="flag-img">Colombia</div>
+      <div class="flag-chip r up d2"><img src="https://flagcdn.com/w40/us.png" alt="EE.UU" class="flag-img">EE.UU</div>
+      <div class="flag-chip r up d3"><img src="https://flagcdn.com/w40/ca.png" alt="Canadá" class="flag-img">Canadá</div>
+      <div class="flag-chip r up d4"><img src="https://flagcdn.com/w40/ve.png" alt="Venezuela" class="flag-img">Venezuela</div>
+      <div class="flag-chip r up d5"><img src="https://flagcdn.com/w40/es.png" alt="España" class="flag-img">España</div>
+      <div class="flag-chip r up d6"><img src="https://flagcdn.com/w40/mx.png" alt="México" class="flag-img">México</div>
+    </div>
+    <div class="stats-row">
+      <div class="stat-card r scale d1">
+        <div class="stat-icon">🎓</div>
+        <div class="stat-num" data-target="95" data-suffix="%">0</div>
+        <div class="stat-lbl">Mejora en notas de colegio en 3 meses</div>
+      </div>
+      <div class="stat-card r scale d2">
+        <div class="stat-icon">⭐</div>
+        <div class="stat-num">4.9<span style="font-size:1rem;font-weight:400">/5</span></div>
+        <div class="stat-lbl">Satisfacción de Tutores</div>
+      </div>
+      <div class="stat-card r scale d3">
+        <div class="stat-icon">👪</div>
+        <div class="stat-num" data-target="100" data-suffix="%">0</div>
+        <div class="stat-lbl">Reportes enviados a padres</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAIN POINTS -->
+  <section class="pain" id="problemas">
+    <div class="sh r up">
+      <div class="sh-tag">¿Tu hijo vive alguna de estas situaciones?</div>
+      <h2>Los bloqueos más comunes que vemos en niños</h2>
+      <p>Si tu hijo se identifica con alguno de estos, One Talk Kids tiene la solución exacta.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card r left d1">
+        <div class="pain-icon">🥱</div>
+        <h3>Se aburre y desconecta en las clases de inglés</h3>
+        <p>Los métodos tradicionales no captan su atención. Demasiada gramática, poca práctica real, y cero disfrute.</p>
+      </div>
+      <div class="pain-card r up d2">
+        <div class="pain-icon">📉</div>
+        <h3>Sus notas en inglés no mejoran aunque estudia</h3>
+        <p>Estudia pero no avanza. Lo que le falta no es esfuerzo — es el método correcto adaptado a su forma de aprender.</p>
+      </div>
+      <div class="pain-card r right d3">
+        <div class="pain-icon">🤐</div>
+        <h3>Entiende inglés pero no se atreve a hablarlo</h3>
+        <p>Tiene vocabulario, pero cuando debe comunicarse en clase o frente a otros, se bloquea por timidez e inseguridad.</p>
+      </div>
+    </div>
+    <div class="pain-cta-block r up">
+      <p>Estos bloqueos se pueden superar. Cientos de niños ya lo lograron con One Talk Kids.</p>
+      <button class="btn-orange" onclick="scroll2Form()">Quiero el diagnóstico gratuito para mi hijo →</button>
+    </div>
+  </section>
+
+  <!-- METHODOLOGY -->
+  <section class="method" id="metodo">
+    <div class="sh r up">
+      <div class="sh-tag" style="color:var(--teal)">Cómo funciona One Talk Kids</div>
+      <h2 class="white">El sistema que hace que tu hijo quiera aprender</h2>
+      <p class="white">No es un curso más. Es un entorno completo donde el aprendizaje se convierte en una aventura.</p>
+    </div>
+    <div class="steps-wrap">
+      <div class="steps-line"></div>
+      <div class="step-item r left d1">
+        <div class="step-dot">🎮</div>
+        <div class="step-body">
+          <h3>Paso 1 – Aprendizaje Gamificado</h3>
+          <p>Usamos dinámicas y recursos modernos que hacen que el vocabulario, la pronunciación y la gramática se aprenden como si fuera un juego de recompensas. Tu hijo quiere llegar a la siguiente sesión.</p>
+        </div>
+      </div>
+      <div class="step-item r left d2">
+        <div class="step-dot">👪</div>
+        <div class="step-body">
+          <h3>Paso 2 – Supervisión Total para Padres</h3>
+          <p>Recibes reportes semanales sobre su progreso, asistencia y nivel CEFR. Tú siempre sabes cómo avanza tu hijo sin adivinar.</p>
+        </div>
+      </div>
+      <div class="step-item r left d3">
+        <div class="step-dot">👨‍🏫</div>
+        <div class="step-body">
+          <h3>Paso 3 – Docentes Especializados en Niños</h3>
+          <p>Nuestros docentes no solo dominan el idioma. Están formados en pedagogía infantil moderna para crear conexión real con cada estudiante.</p>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:3rem" class="r up">
+      <button class="btn-orange" onclick="scroll2Form()">🌟 Quiero este sistema para mi hijo</button>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="results">
+    <div class="sh r up">
+      <div class="sh-tag">¿Cuándo verás resultados?</div>
+      <h2>La transformación de tu hijo mes a mes</h2>
+      <p>Con 2 sesiones semanales, esto es lo que experimentan nuestros students kids:</p>
+    </div>
+    <div class="results-grid">
+      <div class="rc rc1 r scale d1">
+        <div class="rc-period" style="color:var(--orange)">Mes 1</div>
+        <p>Mayor autonomía e interés. Empieza a participar en clase voluntariamente. Pronuncia sin vergüenza.</p>
+        <div style="margin-top:.8rem;font-size:.8rem;font-weight:700;color:var(--orange)">RESULTADO: Pierde el miedo</div>
+      </div>
+      <div class="rc rc2 featured r scale d2">
+        <div class="rc-period" style="color:var(--teal)">Mes 3</div>
+        <p>Mejora visible en calificaciones del colegio. Se comunica con extranjeros sin bloquearse. Confianza real.</p>
+        <div style="margin-top:.8rem;font-size:.8rem;font-weight:700;color:var(--teal)">RESULTADO: Inglés escolar sólido</div>
+      </div>
+      <div class="rc rc3 r scale d3">
+        <div class="rc-period" style="color:var(--violet)">Mes 6</div>
+        <p>Asimilación bilingüe temprana. Consume contenido en inglés por placer. Nivel CEFR certificable.</p>
+        <div style="margin-top:.8rem;font-size:.8rem;font-weight:700;color:var(--violet)">RESULTADO: Bilingüismo real</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUDIENCE -->
+  <section class="audience" id="audiencia">
+    <div class="sh r up">
+      <div class="sh-tag" style="color:var(--yellow)">¿Cuál es el perfil de tu hijo?</div>
+      <h2 class="white">Elige el programa que encaja con la etapa de tu hijo</h2>
+      <p style="color:rgba(255,255,255,.65)">Cada niño is diferente. Por eso cada programa está diseñado con prioridades distintas según su edad y nivel.</p>
+    </div>
+    <div class="audience-grid" style="grid-template-columns: 1fr 1fr; gap: 3rem;">
+      <div class="aud-card r left d1">
+        <div class="aud-icon">📚</div>
+        <h3>Refuerzo Escolar (6–14 años)</h3>
+        <p>Apoyo interactivo alineado al currículo de su colegio bilingüe. Mejoramos sus notas y su fluidez real al mismo tiempo. Resultado visible en las próximas boletas.</p>
+        <button class="aud-cta-btn" onclick="scroll2Form()">Mi hijo necesita esto →</button>
+      </div>
+      <div class="aud-card r right d2">
+        <div class="aud-icon">🌟</div>
+        <h3>Bilingüismo Temprano (4–8 años)</h3>
+        <p>Inmersión total en inglés desde pequeños. Juegos, canciones, historias y clases en vivo. El mejor momento para aprender un idioma es ahora.</p>
+        <button class="aud-cta-btn" onclick="scroll2Form()">Empezar desde temprano →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="form-sec" id="form-section">
+    <div class="sh r up">
+      <div class="sh-tag" style="color:rgba(255,255,255,.8)">Sin costo · Sin compromiso · Respuesta en &lt;24 hrs</div>
+      <h2 class="white">Dale a tu hijo la ventaja del inglés desde ya</h2>
+      <p class="white">Agenda la evaluación gratuita. Un educador de One Talk Kids diseñará el plan exacto para la etapa y el nivel de tu hijo/a.</p>
+      <div style="display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:1rem" class="r up">
+        <div style="color:rgba(255,255,255,.85);font-size:.9rem">✅ Diagnóstico CEFR gratis</div>
+        <div style="color:rgba(255,255,255,.85);font-size:.9rem">✅ Reportes semanales para padres</div>
+        <div style="color:rgba(255,255,255,.85);font-size:.9rem">✅ Clases 1 a 1 gamificadas</div>
+      </div>
+    </div>
+    <div class="form-card r scale">
+      <form id="lead-form">
+        <div class="fc-header">
+          <h3>🎯 Información del Acudiente</h3>
+          <p>Un asesor se contactará contigo, el tutor, para agendar la sesión en vivo.</p>
+        </div>
+        <div class="fg"><label>Nombre del tutor / acudiente</label><input type="text" id="cf-name"
+            placeholder="Tu nombre" required /></div>
+        <div class="fg"><label>Correo electrónico del tutor</label><input type="email" id="cf-email"
+            placeholder="tu@email.com" required /></div>
+        <div class="fg"><label>Teléfono o WhatsApp</label><input type="tel" id="cf-phone" placeholder="+57 300 000 0000"
+            required /></div>
+        <div class="fg">
+          <label>Rango de edad del niño/a</label>
+          <select id="cf-target" required>
+            <option value="">Selecciona la edad...</option>
+            <option value="6 a 9 años">6 a 9 años (Bilingüismo Temprano)</option>
+            <option value="10 a 14 años">10 a 14 años (Refuerzo Escolar Avanzado)</option>
+            <option value="15+ años">15+ años (Transición a programa de adultos)</option>
+          </select>
+        </div>
+        <div class="fg-checkbox">
+          <input type="checkbox" id="cf-privacy" required />
+          <label for="cf-privacy">Acepto la <a href="#" id="open-privacy-modal">política de tratamiento de datos</a> y autorizo el contacto.</label>
+        </div>
+        <button type="submit" class="btn-form">📅 Contactar Vía WhatsApp</button>
+      </form>
+      <div class="success-box" id="success-box">
+        <div class="s-icon">💬</div>
+        <h3>Generando tu enlace seguro...</h3>
+        <p>Tus datos han sido registrados en tu dispositivo. Vamos a abrir WhatsApp para que hables con un asesor y
+          completes el registro de tu hijo/a.</p>
+        <a href="#" id="btn-wa-success" class="btn-wa-s" target="_blank">💬 Continuar a WhatsApp Web</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="f-logo"><img src="Imagenes/Onetalk_kids.png" alt="One Talk Kids"
+            onerror="this.src='https://placehold.co/150x40/1ABC9C/1F3A5F?text=One+Talk+Kids'"></div>
+        <p class="f-tagline">Entorno educativo especializado para niños apoyado en la excelencia global de One Talk.</p>
+        <div style="display:flex;gap:12px;margin-top:10px;">
+          <a href="https://www.instagram.com/fluentspeakingclub?igsh=MXA4YXN4OXA0cGU0Mw==" target="_blank"
+            class="social-icon" aria-label="Instagram"><svg viewBox="0 0 24 24">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg></a>
+          <a href="https://www.facebook.com/share/17oZBFLWa1/?mibextid=wwXIfr" target="_blank" class="social-icon"
+            aria-label="Facebook"><svg viewBox="0 0 24 24">
+              <path
+                d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+            </svg></a>
+          <a href="https://wa.link/7kezb1" target="_blank" class="social-icon" aria-label="WhatsApp"><svg
+              viewBox="0 0 24 24">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg></a>
+        </div>
+      </div>
+      <div class="fc">
+        <h4>Sitio Kids</h4><a href="#problemas">Retos Comunes</a><a href="#metodo">Metodología Kids</a><a
+          href="index.html" style="color:var(--yellow);font-weight:700">Volver a Global</a>
+      </div>
+      <div class="fc">
+        <h4>Planes Kids</h4><a href="#form-section">Refuerzo Escolar</a><a href="#form-section">Bilingüismo Temprano</a>
+      </div>
+      <div class="fc">
+        <h4>Legal</h4><a href="#" class="open-privacy-btn">Privacidad de menores</a><a href="#" class="open-privacy-btn">Autorizaciones</a>
+      </div>
+    </div>
+    <div class="footer-bar">© 2025 One Talk Kids. Todos los derechos reservados.</div>
+  </footer>
+
+  <!-- WA FLOAT -->
+  <a href="https://wa.link/7kezb1" class="wa-btn" aria-label="WhatsApp" target="_blank">
+    <svg viewBox="0 0 24 24">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  </a>
+
+  <!-- PRIVACY MODAL -->
+  <div class="modal-backdrop" id="privacy-modal">
+    <div class="modal-content r scale">
+      <button class="modal-close" id="close-modal">&times;</button>
+      <h2>🔒 POLÍTICA DE TRATAMIENTO DE DATOS PERSONALES – ONE TALK</h2>
+      
+      <h3>1. Identificación del responsable del tratamiento</h3>
+      <p>One Talk, academia de educación digital con alcance nacional e internacional, en adelante “One Talk”, en calidad de responsable del tratamiento de datos personales, adopta la presente política en cumplimiento de la normativa vigente en materia de protección de datos personales.</p>
+
+      <h3>2. Marco normativo aplicable</h3>
+      <p>La presente política se rige por lo dispuesto en:</p>
+      <ul>
+        <li>Ley 1581 de 2012</li>
+        <li>Decreto 1377 de 2013</li>
+        <li>Decreto 1074 de 2015 (Decreto Único Reglamentario del Sector Comercio, Industria y Turismo)</li>
+        <li>Demás normas que modifiquen, complementen o sustituyan las anteriores</li>
+      </ul>
+      <p>Adicionalmente, en virtud del carácter digital y global de los servicios prestados, One Talk adopta principios alineados con estándares internacionales de protección de datos, incluyendo lineamientos del Reglamento General de Protección de Datos (GDPR) de la Unión Europea, en lo aplicable.</p>
+
+      <h3>3. Definiciones</h3>
+      <p>Para efectos de la presente política, se tendrán en cuenta las definiciones establecidas en la Ley 1581 de 2012, incluyendo:</p>
+      <ul>
+        <li><strong>Dato personal:</strong> Cualquier información vinculada o que pueda asociarse a una persona natural determinada o determinable.</li>
+        <li><strong>Titular:</strong> Persona natural cuyos datos personales son objeto de tratamiento.</li>
+        <li><strong>Tratamiento:</strong> Cualquier operación sobre datos personales, como recolección, almacenamiento, uso, circulación o supresión.</li>
+        <li><strong>Responsable del tratamiento:</strong> Persona natural o jurídica que decide sobre la base de datos y/o el tratamiento de los datos.</li>
+        <li><strong>Encargado del tratamiento:</strong> Persona que realiza el tratamiento de datos por cuenta del responsable.</li>
+      </ul>
+
+      <h3>4. Principios para el tratamiento de datos</h3>
+      <p>One Talk garantiza que el tratamiento de datos personales se realizará conforme a los siguientes principios:</p>
+      <ul>
+        <li><strong>Legalidad:</strong> El tratamiento se realizará conforme a la ley aplicable.</li>
+        <li><strong>Finalidad:</strong> Los datos serán recolectados con fines legítimos, explícitos y previamente informados.</li>
+        <li><strong>Libertad:</strong> El tratamiento solo se ejercerá con el consentimiento previo, expreso e informado del titular.</li>
+        <li><strong>Veracidad o calidad:</strong> La información será veraz, completa, exacta y actualizada.</li>
+        <li><strong>Transparencia:</strong> Se garantizará el derecho del titular a obtener información sobre sus datos.</li>
+        <li><strong>Acceso y circulación restringida:</strong> El tratamiento se limitará a las personas autorizadas.</li>
+        <li><strong>Seguridad:</strong> Se adoptarán medidas técnicas, humanas y administrativas para proteger la información.</li>
+        <li><strong>Confidencialidad:</strong> Se garantiza la reserva de la información incluso después de finalizada la relación con el titular.</li>
+      </ul>
+
+      <h3>5. Finalidad del tratamiento de los datos</h3>
+      <p>Los datos personales recolectados por One Talk serán utilizados para:</p>
+      <ul>
+        <li>Gestionar procesos de registro, inscripción, matrícula y prestación de servicios educativos</li>
+        <li>Desarrollar actividades académicas, administrativas y comerciales</li>
+        <li>Brindar información sobre programas, cursos, promociones y eventos</li>
+        <li>Realizar seguimiento al progreso académico de los estudiantes</li>
+        <li>Gestionar procesos de facturación, pagos y cumplimiento de obligaciones contractuales</li>
+        <li>Establecer canales de comunicación con estudiantes, clientes y usuarios</li>
+        <li>Mejorar la experiencia del usuario en plataformas digitales</li>
+        <li>Realizar análisis estadísticos y de comportamiento para optimización del servicio</li>
+        <li>Cumplir obligaciones legales y requerimientos de autoridades competentes</li>
+      </ul>
+
+      <h3>6. Tratamiento en entornos digitales y transferencia internacional</h3>
+      <p>Dado que One Talk opera en entornos digitales y presta servicios a nivel global:</p>
+      <ul>
+        <li>Los datos podrán ser almacenados y procesados en plataformas tecnológicas, servidores en la nube y herramientas digitales de terceros.</li>
+        <li>Se podrán realizar transferencias y transmisiones internacionales de datos, garantizando siempre niveles adecuados de protección conforme a estándares de seguridad de la información.</li>
+        <li>One Talk implementa medidas alineadas con buenas prácticas internacionales para garantizar la integridad, disponibilidad y confidencialidad de la información.</li>
+      </ul>
+
+      <h3>7. Derechos de los titulares</h3>
+      <p>Los titulares de los datos personales tienen derecho a:</p>
+      <ul>
+        <li>Conocer, actualizar y rectificar sus datos personales</li>
+        <li>Solicitar prueba de la autorización otorgada</li>
+        <li>Ser informados sobre el uso de sus datos</li>
+        <li>Presentar consultas y reclamos relacionados con el tratamiento</li>
+        <li>Revocar la autorización y/o solicitar la supresión de los datos cuando sea procedente</li>
+        <li>Acceder de forma gratuita a sus datos personales</li>
+      </ul>
+
+      <h3>8. Procedimiento para consultas y reclamos</h3>
+      <p>Los titulares podrán presentar solicitudes para:</p>
+      <ul>
+        <li>Consultar la información almacenada</li>
+        <li>Solicitar correcciones o actualizaciones</li>
+        <li>Solicitar eliminación de datos</li>
+      </ul>
+      <p>One Talk dará respuesta dentro de los términos establecidos por la normativa vigente, garantizando un proceso transparente y oportuno.</p>
+
+      <h3>9. Seguridad de la información</h3>
+      <p>One Talk adopta medidas de seguridad técnicas, humanas y administrativas necesarias para:</p>
+      <ul>
+        <li>Evitar el acceso no autorizado</li>
+        <li>Prevenir pérdida, adulteración o uso indebido de los datos</li>
+        <li>Garantizar la protección de la información en entornos digitales</li>
+      </ul>
+
+      <h3>10. Vigencia de la política</h3>
+      <p>La presente política rige a partir de su publicación y se mantendrá vigente mientras se realicen actividades de tratamiento de datos por parte de One Talk.</p>
+      <p>Los datos personales serán conservados durante el tiempo necesario para cumplir con las finalidades descritas y las obligaciones legales aplicables.</p>
+
+      <h3>11. Autorización del titular</h3>
+      <p>Al proporcionar sus datos personales a través de formularios, plataformas digitales, canales de comunicación o cualquier medio dispuesto por One Talk, el titular autoriza de manera previa, expresa e informada el tratamiento de sus datos conforme a lo establecido en la presente política.</p>
+
+      <h3>12. Modificaciones</h3>
+      <p>One Talk se reserva el derecho de modificar la presente política en cualquier momento. Cualquier cambio será informado a través de los canales oficiales.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
