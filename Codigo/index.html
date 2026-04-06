@@ -11,12 +11,20 @@
 </head>
 <body>
 
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="preloader-logo-wrap">
+    <img src="imagenes/onetalk.logo.png" alt="Cargando..." class="preloader-logo" onerror="this.src='https://placehold.co/150x40/1F3A5F/FFF?text=One+Talk'">
+    <div class="preloader-ring"></div>
+  </div>
+</div>
+
 <div id="progress-bar"></div>
 <div id="cursor-glow"></div>
 
 <!-- NAVBAR -->
 <nav id="navbar">
-  <div class="nav-logo"><a href="index.html" class="nav-logo-link"><img src="Imagenes/Onetalk.logo.png" alt="One Talk" onerror="this.src='https://placehold.co/150x40/1F3A5F/FFF?text=One+Talk'"></a></div>
+  <div class="nav-logo"><a href="index.html" class="nav-logo-link"><img src="imagenes/onetalk.logo.png" alt="One Talk" onerror="this.src='https://placehold.co/150x40/1F3A5F/FFF?text=One+Talk'"></a></div>
   <div class="nav-links">
     <a href="#problemas">Problemas</a>
     <a href="#metodo">Método</a>
@@ -62,9 +70,9 @@
     <div class="hero-visual r right">
       <div style="position:relative">
         <div class="hero-card-main" style="position:relative;">
-          <img src="Imagenes/hero_adults.png" alt="Profesor One Talk en clase interactiva corporativa" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <img src="imagenes/hero_adults.png" alt="Profesor One Talk en clase interactiva corporativa" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
           <div style="position:absolute;bottom:20px;right:20px;width:120px;background:rgba(255,255,255,0.9);padding:10px;border-radius:12px;backdrop-filter:blur(10px);box-shadow:0 10px 30px rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.3)">
-            <img src="Imagenes/official_logo.png" style="width:100%;height:auto;object-fit:contain;">
+            <img src="imagenes/official_logo.png" style="width:100%;height:auto;object-fit:contain;">
           </div>
         </div>
         <div class="hc-badge">
@@ -206,9 +214,9 @@
     </div>
     <div class="r right">
       <div class="inc-visual" style="border-radius:24px;overflow:hidden;padding:0;position:relative;">
-        <img src="Imagenes/online_class.png" alt="Clase de inglés personalizada One Talk" style="width:100%;height:360px;object-fit:cover;display:block;" onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&auto=format&fit=crop'">
+        <img src="imagenes/online_class.png" alt="Clase de inglés personalizada One Talk" style="width:100%;height:360px;object-fit:cover;display:block;" onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&auto=format&fit=crop'">
         <div style="position:absolute;bottom:20px;right:20px;width:140px;background:white;padding:10px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.15)">
-          <img src="Imagenes/official_logo.png" style="width:100%;height:auto;object-fit:contain;">
+          <img src="imagenes/official_logo.png" style="width:100%;height:auto;object-fit:contain;">
         </div>
       </div>
     </div>
@@ -314,7 +322,30 @@
       </div>
       <div class="fg"><label>Nombre completo</label><input type="text" id="cf-name" placeholder="Tu nombre" required/></div>
       <div class="fg"><label>Correo electrónico</label><input type="email" id="cf-email" placeholder="tu@email.com" required/></div>
-      <div class="fg"><label>Teléfono o WhatsApp</label><input type="tel" id="cf-phone" placeholder="+57 300 000 0000" required/></div>
+      <div class="fg">
+        <label>País de residencia</label>
+        <select id="cf-country" required>
+          <option value="">Selecciona tu país...</option>
+          <option value="Colombia" data-code="+57">Colombia</option>
+          <option value="Estados Unidos" data-code="+1">Estados Unidos</option>
+          <option value="Canadá" data-code="+1">Canadá</option>
+          <option value="México" data-code="+52">México</option>
+          <option value="España" data-code="+34">España</option>
+          <option value="Venezuela" data-code="+58">Venezuela</option>
+          <option value="Perú" data-code="+51">Perú</option>
+          <option value="Chile" data-code="+56">Chile</option>
+          <option value="Argentina" data-code="+54">Argentina</option>
+          <option value="Ecuador" data-code="+593">Ecuador</option>
+          <option value="Otro" data-code="">Otro país</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label>Teléfono o WhatsApp</label>
+        <div style="display:flex;gap:10px;">
+          <input type="text" id="cf-country-code" placeholder="+57" style="width:80px;" required/>
+          <input type="tel" id="cf-phone" placeholder="300 000 0000" style="flex:1;" required/>
+        </div>
+      </div>
       <div class="fg">
         <label>¿En qué aspecto de mejora quieres centrarte?</label>
         <select id="cf-target" required>
@@ -335,6 +366,7 @@
       <h3>Generando tu enlace seguro...</h3>
       <p>Tus datos han sido registrados en tu dispositivo. Vamos a abrir WhatsApp para procesarlos con nuestro equipo comercial y continuar tu proceso de registro.</p>
       <a href="#" id="btn-wa-success" class="btn-wa-s" target="_blank">💬 Continuar a WhatsApp Web</a>
+      <button type="button" class="btn-ghost" id="btn-reset-form" style="display:block;margin:15px auto 0;color:var(--dark);border-color:#ccc;background:#f8f9fa;">↻ Enviar otra respuesta</button>
     </div>
   </div>
 </section>
@@ -343,7 +375,7 @@
 <footer>
   <div class="footer-grid">
     <div>
-      <div class="f-logo"><img src="Imagenes/Logo.png" alt="One Talk" onerror="this.src='https://placehold.co/150x40/1ABC9C/1F3A5F?text=One+Talk'"></div>
+      <div class="f-logo"><img src="imagenes/logo.png" alt="One Talk" onerror="this.src='https://placehold.co/150x40/1ABC9C/1F3A5F?text=One+Talk'"></div>
       <p class="f-tagline">Misión: Impactar tu vida con educación de alta calidad, mejorando tu acceso a nuevas oportunidades en el mundo.</p>
       <div style="display:flex;gap:12px;margin-top:10px;">
         <a href="https://www.instagram.com/fluentspeakingclub?igsh=MXA4YXN4OXA0cGU0Mw==" target="_blank" class="social-icon" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>

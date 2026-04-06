@@ -17,13 +17,21 @@
 
 <body>
 
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <div class="preloader-logo-wrap">
+      <img src="imagenes/onetalk_kids.png" alt="Cargando..." class="preloader-logo" onerror="this.src='https://placehold.co/150x40/1F3A5F/FFF?text=One+Talk+Kids'">
+      <div class="preloader-ring"></div>
+    </div>
+  </div>
+
   <div id="progress-bar"></div>
   <div id="cursor-glow"></div>
 
   <!-- NAVBAR -->
   <nav id="navbar">
     <div class="nav-logo kids-logo"><a href="kids.html" class="nav-logo-link"><img
-          src="Imagenes/Onetalk_kids.png" alt="One Talk Kids"
+          src="imagenes/onetalk_kids.png" alt="One Talk Kids"
           onerror="this.src='https://placehold.co/150x40/1F3A5F/FFF?text=One+Talk+Kids'"></a></div>
     <div class="nav-links">
       <a href="index.html" style="color:#FFF;font-weight:600;">Adultos/Empresas</a>
@@ -76,7 +84,7 @@
       <div class="hero-visual r right">
         <div style="position:relative">
           <div class="hero-card-main">
-            <img src="Imagenes/hero_kids.png"
+            <img src="imagenes/hero_kids.png"
               alt="Kids learning online with One Talk" loading="lazy" />
           </div>
           <div class="hc-badge">
@@ -259,8 +267,30 @@
             placeholder="Tu nombre" required /></div>
         <div class="fg"><label>Correo electrónico del tutor</label><input type="email" id="cf-email"
             placeholder="tu@email.com" required /></div>
-        <div class="fg"><label>Teléfono o WhatsApp</label><input type="tel" id="cf-phone" placeholder="+57 300 000 0000"
-            required /></div>
+        <div class="fg">
+          <label>País de residencia</label>
+          <select id="cf-country" required>
+            <option value="">Selecciona tu país...</option>
+            <option value="Colombia" data-code="+57">Colombia</option>
+            <option value="Estados Unidos" data-code="+1">Estados Unidos</option>
+            <option value="Canadá" data-code="+1">Canadá</option>
+            <option value="México" data-code="+52">México</option>
+            <option value="España" data-code="+34">España</option>
+            <option value="Venezuela" data-code="+58">Venezuela</option>
+            <option value="Perú" data-code="+51">Perú</option>
+            <option value="Chile" data-code="+56">Chile</option>
+            <option value="Argentina" data-code="+54">Argentina</option>
+            <option value="Ecuador" data-code="+593">Ecuador</option>
+            <option value="Otro" data-code="">Otro país</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label>Teléfono o WhatsApp</label>
+          <div style="display:flex;gap:10px;">
+            <input type="text" id="cf-country-code" placeholder="+57" style="width:80px;" required/>
+            <input type="tel" id="cf-phone" placeholder="300 000 0000" style="flex:1;" required/>
+          </div>
+        </div>
         <div class="fg">
           <label>Rango de edad del niño/a</label>
           <select id="cf-target" required>
@@ -282,6 +312,7 @@
         <p>Tus datos han sido registrados en tu dispositivo. Vamos a abrir WhatsApp para que hables con un asesor y
           completes el registro de tu hijo/a.</p>
         <a href="#" id="btn-wa-success" class="btn-wa-s" target="_blank">💬 Continuar a WhatsApp Web</a>
+        <button type="button" class="btn-ghost" id="btn-reset-form" style="display:block;margin:15px auto 0;color:var(--dark);border-color:#ccc;background:#f8f9fa;">↻ Enviar otra respuesta</button>
       </div>
     </div>
   </section>
@@ -290,7 +321,7 @@
   <footer>
     <div class="footer-grid">
       <div>
-        <div class="f-logo"><img src="Imagenes/Onetalk_kids.png" alt="One Talk Kids"
+        <div class="f-logo"><img src="imagenes/onetalk_kids.png" alt="One Talk Kids"
             onerror="this.src='https://placehold.co/150x40/1ABC9C/1F3A5F?text=One+Talk+Kids'"></div>
         <p class="f-tagline">Entorno educativo especializado para niños apoyado en la excelencia global de One Talk.</p>
         <div style="display:flex;gap:12px;margin-top:10px;">

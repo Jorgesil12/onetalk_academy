@@ -1,3 +1,46 @@
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        preloader.classList.add('hide');
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 800);
+    }
+
+    // Funcionalidad para resetear el formulario (Enviar otra respuesta)
+    const btnResetForm = document.getElementById('btn-reset-form');
+    if(btnResetForm) {
+        btnResetForm.addEventListener('click', () => {
+            const form = document.getElementById('lead-form');
+            if (form) {
+              form.reset(); // Vacía los campos del formulario
+              document.getElementById('success-box').style.display = 'none'; // Oculta estado éxito
+              form.style.display = 'block'; // Muestra nuevamente el formulario
+              
+              // Restaurar estado del botón de envío
+              const submitBtn = form.querySelector('button[type="submit"]');
+              submitBtn.innerText = "📅 Contactar Vía WhatsApp";
+              submitBtn.disabled = false;
+            }
+        });
+    }
+
+    // Funcionalidad para autocompletar el indicativo según el país
+    const countrySelect = document.getElementById('cf-country');
+    const countryCodeInput = document.getElementById('cf-country-code');
+    if (countrySelect && countryCodeInput) {
+        countrySelect.addEventListener('change', (e) => {
+            const selectedOption = e.target.options[e.target.selectedIndex];
+            const code = selectedOption.getAttribute('data-code');
+            if (code !== null) {
+                countryCodeInput.value = code;
+            } else {
+                countryCodeInput.value = '';
+            }
+        });
+    }
+});
+
 window.addEventListener('scroll',()=>{document.getElementById('progress-bar').style.width=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100+'%'});
 window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>60)});
 document.getElementById('ham').addEventListener('click',()=>{document.getElementById('mob-menu').classList.toggle('open')});
@@ -16,24 +59,81 @@ const cObs=new IntersectionObserver((entries)=>{
 },{threshold:.5});
 document.querySelectorAll('[data-target]').forEach(el=>cObs.observe(el));
 
-document.getElementById('lead-form').addEventListener('submit',function(e){
-  e.preventDefault();
-  const name=document.getElementById('cf-name').value;
-  const email=document.getElementById('cf-email').value;
-  const target=document.getElementById('cf-target').value;
-  const phone=document.getElementById('cf-phone').value;
-  
-  let msg = '';
-  if (document.querySelector('.kids-logo')) {
-    msg=`Hola, soy ${name} (acudiente), mi contacto es ${email} y ${phone}. Me interesa el programa One Talk Kids para un menor de ${target}, solicito una evaluación gratuita.`;
-  } else {
-    msg=`Hola One Talk, mi nombre es ${name}, mi correo es ${email} (${phone}). Me interesa aplicar al programa general orientado a: ${target}, solicitando mi evaluación de cortesía.`;
-  }
-  
-  document.getElementById('btn-wa-success').href=`https://wa.me/573107927335?text=${encodeURIComponent(msg)}`;
-  this.style.display='none';
-  document.getElementById('success-box').style.display='block';
-});
+// Configuración de URLs
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwHMlEtjEmuM4a77fRauY8GcmypjwqGZLojfHkLPZc2iI54_6s94J-1YLB2YNJPBvsd/exec';
+const form = document.getElementById('lead-form');
+
+if (form) {
+  form.addEventListener('submit', e => {
+      e.preventDefault();
+      
+      // Mostramos un estado de carga opcional en el botón (buena práctica)
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn.innerText;
+      submitBtn.innerText = "Enviando...";
+      submitBtn.disabled = true;
+
+      // Recolectamos los datos de los inputs del HTML
+      const formData = new FormData();
+      formData.append('nombre', document.getElementById('cf-name').value);
+      formData.append('email', document.getElementById('cf-email').value);
+      
+      const pais = document.getElementById('cf-country').value;
+      if (pais) {
+          formData.append('pais', pais);
+      }
+      
+      // Concatenamos indicativo + teléfono y agregamos la comilla simple para evitar el #ERROR!
+      const countryCode = document.getElementById('cf-country-code').value;
+      const phone = document.getElementById('cf-phone').value;
+      formData.append('telefono', "'" + countryCode + " " + phone);
+      
+      formData.append('interes', document.getElementById('cf-target').value);
+
+      // 1. Enviamos los datos a Google Sheets
+      fetch(scriptURL, { 
+          method: 'POST', 
+          body: formData,
+          mode: 'no-cors' // Esto evita errores de redirección en algunos navegadores
+      })
+      .then(() => {
+          // 2. Ocultar formulario y mostrar caja de éxito
+          document.getElementById('lead-form').style.display = 'none';
+          document.getElementById('success-box').style.display = 'block';
+          
+          // 3. Ejecutar la función para preparar el enlace de WhatsApp
+          prepararWhatsApp(); 
+      })
+      .catch(error => {
+          console.error('Error!', error.message);
+          submitBtn.innerText = "Reintentar";
+          submitBtn.disabled = false;
+          prepararWhatsApp(); // Intentamos preparar WhatsApp de todos modos
+      });
+  });
+}
+
+function prepararWhatsApp() {
+    const nombre = document.getElementById('cf-name').value;
+    const interes = document.getElementById('cf-target').value;
+    
+    let mensaje = '';
+    // Mensaje adaptado según si es la página de Kids o Principal
+    if (document.querySelector('.kids-logo')) {
+      mensaje = `Hola One Talk, mi nombre es ${nombre}. Me interesa el programa Kids (${interes}) para un menor y me gustaría agendar su diagnóstico gratuito.`;
+    } else {
+      mensaje = `Hola One Talk, mi nombre es ${nombre}. Me interesa el programa de ${interes} y me gustaría agendar mi diagnóstico gratuito.`;
+    }
+    
+    // Generamos el enlace con tu número: 573107927335
+    const waLink = `https://wa.me/573107927335?text=${encodeURIComponent(mensaje)}`;
+    
+    // Asignamos el enlace al botón de éxito
+    const btnWhatsApp = document.getElementById('btn-wa-success');
+    if (btnWhatsApp) {
+        btnWhatsApp.href = waLink;
+    }
+}
 function scroll2Form(){document.getElementById('form-section').scrollIntoView({behavior:'smooth'});}
 
 (function(){
