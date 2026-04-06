@@ -287,13 +287,13 @@
         <div class="fg">
           <label>Teléfono o WhatsApp</label>
           <div style="display:flex;gap:10px;">
-            <input type="text" id="cf-country-code" name="country-code" autocomplete="tel-country-code" placeholder="+57" style="width:80px;" required/>
-            <input type="tel" id="cf-phone" name="phone" autocomplete="tel-national" placeholder="300 000 0000" style="flex:1;" required/>
+            <input type="text" id="cf-indicativo" name="prefix" autocomplete="off" placeholder="+57" style="width:80px;" readonly required/>
+            <input type="tel" id="cf-phone" name="phone" autocomplete="off" placeholder="300 000 0000" style="flex:1;" required/>
           </div>
         </div>
         <div class="fg">
           <label>Rango de edad del niño/a</label>
-          <select id="cf-target" required>
+          <select id="cf-target" autocomplete="off" required>
             <option value="">Selecciona la edad...</option>
             <option value="6 a 9 años">6 a 9 años (Bilingüismo Temprano)</option>
             <option value="10 a 14 años">10 a 14 años (Refuerzo Escolar Avanzado)</option>

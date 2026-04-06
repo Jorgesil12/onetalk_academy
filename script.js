@@ -21,21 +21,26 @@ window.addEventListener('load', () => {
               const submitBtn = form.querySelector('button[type="submit"]');
               submitBtn.innerText = "📅 Contactar Vía WhatsApp";
               submitBtn.disabled = false;
+              
+              const indicativo = document.getElementById('cf-indicativo');
+              if(indicativo) indicativo.readOnly = true;
             }
         });
     }
 
     // Funcionalidad para autocompletar el indicativo según el país
     const countrySelect = document.getElementById('cf-country');
-    const countryCodeInput = document.getElementById('cf-country-code');
+    const countryCodeInput = document.getElementById('cf-indicativo');
     if (countrySelect && countryCodeInput) {
         countrySelect.addEventListener('change', (e) => {
             const selectedOption = e.target.options[e.target.selectedIndex];
             const code = selectedOption.getAttribute('data-code');
-            if (code !== null) {
+            if (code !== null && code !== '') {
                 countryCodeInput.value = code;
+                countryCodeInput.readOnly = true;
             } else {
                 countryCodeInput.value = '';
+                countryCodeInput.readOnly = false; // Permitir escribir si es 'Otro'
             }
         });
     }
@@ -84,7 +89,7 @@ if (form) {
       }
       
       // Concatenamos indicativo + teléfono y agregamos la comilla simple para evitar el #ERROR!
-      const countryCode = document.getElementById('cf-country-code').value;
+      const countryCode = document.getElementById('cf-indicativo').value;
       const phone = document.getElementById('cf-phone').value;
       formData.append('telefono', "'" + countryCode + " " + phone);
       
