@@ -320,11 +320,11 @@
         <h3>🎯 Déjanos tus datos</h3>
         <p>Un asesor se contactará para agendar la sesión en vivo.</p>
       </div>
-      <div class="fg"><label>Nombre completo</label><input type="text" id="cf-name" placeholder="Tu nombre" required/></div>
-      <div class="fg"><label>Correo electrónico</label><input type="email" id="cf-email" placeholder="tu@email.com" required/></div>
+      <div class="fg"><label>Nombre completo</label><input type="text" id="cf-name" name="name" autocomplete="name" placeholder="Tu nombre" required/></div>
+      <div class="fg"><label>Correo electrónico</label><input type="email" id="cf-email" name="email" autocomplete="email" placeholder="tu@email.com" required/></div>
       <div class="fg">
         <label>País de residencia</label>
-        <select id="cf-country" required>
+        <select id="cf-country" name="country" autocomplete="country-name" required>
           <option value="">Selecciona tu país...</option>
           <option value="Colombia" data-code="+57">Colombia</option>
           <option value="Estados Unidos" data-code="+1">Estados Unidos</option>
@@ -342,8 +342,8 @@
       <div class="fg">
         <label>Teléfono o WhatsApp</label>
         <div style="display:flex;gap:10px;">
-          <input type="text" id="cf-country-code" placeholder="+57" style="width:80px;" required/>
-          <input type="tel" id="cf-phone" placeholder="300 000 0000" style="flex:1;" required/>
+          <input type="text" id="cf-country-code" name="country-code" autocomplete="tel-country-code" placeholder="+57" style="width:80px;" required/>
+          <input type="tel" id="cf-phone" name="phone" autocomplete="tel-national" placeholder="300 000 0000" style="flex:1;" required/>
         </div>
       </div>
       <div class="fg">
