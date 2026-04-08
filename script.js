@@ -123,11 +123,11 @@ function prepararWhatsApp() {
     const interes = document.getElementById('cf-target').value;
     
     let mensaje = '';
-    // Mensaje adaptado según si es la página de Kids o Principal
+    // Mensaje adaptado según la solicitud comercial
     if (document.querySelector('.kids-logo')) {
-      mensaje = `Hola One Talk, mi nombre es ${nombre}. Me interesa el programa Kids (${interes}) para un menor y me gustaría agendar su diagnóstico gratuito.`;
+      mensaje = `Hola, quiero agendar mi clase de cortesía de One Talk Kids y recibir una propuesta académica adaptada a mi nivel, horario y presupuesto. Mi nombre es ${nombre}.`;
     } else {
-      mensaje = `Hola One Talk, mi nombre es ${nombre}. Me interesa el programa de ${interes} y me gustaría agendar mi diagnóstico gratuito.`;
+      mensaje = `Hola, quiero agendar mi clase de cortesía de onetalk y recibir una propuesta académica adaptada a mi nivel, horario y presupuesto. Mi nombre es ${nombre}.`;
     }
     
     // Generamos el enlace con tu número: 573107927335

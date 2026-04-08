@@ -49,7 +49,7 @@ nav.scrolled{background:rgba(31,58,95,.92);box-shadow:0 8px 40px rgba(0,0,0,.4)}
 .nav-logo img {height: 100px; width: auto; max-width: 320px; object-fit: contain; margin-top:0px; display:block; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2))}
 .kids-logo img {height: 70px;}
 .nav-logo span{color:#fff}
-.nav-links{display:flex;gap:2rem}
+.nav-links{display:flex;gap:2rem;align-items:center}
 .nav-links a{color:rgba(255,255,255,.65);font-size:.85rem;font-weight:500;text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:var(--teal)}
 .nav-cta{background:var(--orange);color:#fff;font-family:'Poppins',sans-serif;font-weight:700;font-size:.82rem;padding:.55rem 1.3rem;border-radius:100px;border:none;cursor:pointer;transition:all .25s;white-space:nowrap; text-decoration:none; display:inline-block;}
@@ -280,7 +280,9 @@ footer{background:#080f1e;padding:4rem 5% 2rem}
 @media(max-width:1024px){
   .hero-inner,.includes-inner{grid-template-columns:1fr;text-align:center}
   .hero-btns{justify-content:center}
-  .hero-visual{display:none}
+  .hero-visual{display:block; margin: 3rem auto 0; width: 90%; max-width: 500px;}
+  .hero-card-main img{height: 400px;}
+  .hero-float-card{right: 5px; top: -10px; transform: scale(0.85);}
   .pain-grid,.test-grid{grid-template-columns:repeat(2,1fr)}
   .footer-grid{grid-template-columns:1fr 1fr}
 }
@@ -288,6 +290,9 @@ footer{background:#080f1e;padding:4rem 5% 2rem}
   nav .nav-links{display:none}
   .nav-cta{display:none}
   .hamburger{display:flex}
+  .hero-card-main img{height: 350px;}
+  .hero-float-card{right: 5px; top: 5px;}
+  .hc-badge{bottom: 15px; left: 15px; transform: scale(0.9); transform-origin: left bottom;}
   .pain-grid,.test-grid{grid-template-columns:1fr}
   .stats-row{grid-template-columns:1fr}
   .results-grid,.audience-grid{grid-template-columns:1fr}

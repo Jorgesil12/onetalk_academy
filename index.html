@@ -8,6 +8,38 @@
 <meta name="keywords" content="clases de ingles online, academia de ingles, One Talk, metodo 80/20, ingles conversacional, ingles para profesionales, ingles CEFR, bilingüismo"/>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="style.css">
+<style>
+@keyframes pulseKids {
+  0% { transform: scale(1); filter: drop-shadow(0 0 0 rgba(241,196,15,0)); }
+  50% { transform: scale(1.05); filter: drop-shadow(0 0 10px rgba(241,196,15,0.6)); }
+  100% { transform: scale(1); filter: drop-shadow(0 0 0 rgba(241,196,15,0)); }
+}
+.nav-kids-link {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #111 !important;
+  font-weight: 800 !important;
+  background: #F1C40F;
+  padding: 6px 14px;
+  border-radius: 50px;
+  text-decoration: none !important;
+  animation: pulseKids 2s infinite ease-in-out;
+  box-shadow: 0 4px 15px rgba(241, 196, 15, 0.4);
+  transition: all 0.3s ease;
+}
+.nav-kids-link:hover {
+  transform: scale(1.08) !important;
+  animation: none;
+  background: #f39c12;
+}
+.nav-kids-logo {
+  height: 22px;
+  width: auto;
+  object-fit: contain;
+}
+</style>
 </head>
 <body>
 
@@ -29,7 +61,10 @@
     <a href="#problemas">Problemas</a>
     <a href="#metodo">Método</a>
     <a href="#audiencia">Programas</a>
-    <a href="kids.html" style="color:#F1C40F;font-weight:700;">One Talk Kids</a>
+    <a href="kids.html" class="nav-kids-link">
+      <img src="imagenes/onetalk_kids.png" alt="Kids Logo" class="nav-kids-logo" onerror="this.style.display='none'">
+      One Talk Kids
+    </a>
   </div>
   <button class="nav-cta" onclick="scroll2Form()">Evaluación gratis →</button>
   <button class="hamburger" id="ham" aria-label="Menú">
@@ -41,7 +76,10 @@
   <a href="#problemas" style="display:block;color:rgba(255,255,255,.7);padding:.5rem 0;font-size:.9rem;text-decoration:none">Problemas</a>
   <a href="#metodo" style="display:block;color:rgba(255,255,255,.7);padding:.5rem 0;font-size:.9rem;text-decoration:none">Método</a>
   <a href="#audiencia" style="display:block;color:rgba(255,255,255,.7);padding:.5rem 0;font-size:.9rem;text-decoration:none">Programas</a>
-  <a href="kids.html" style="display:block;color:#F1C40F;font-weight:700;padding:.5rem 0;font-size:.9rem;text-decoration:none">One Talk Kids</a>
+  <a href="kids.html" class="nav-kids-link" style="margin-top: 0.5rem;">
+    <img src="imagenes/onetalk_kids.png" alt="Kids Logo" class="nav-kids-logo" onerror="this.style.display='none'">
+    One Talk Kids
+  </a>
   <button class="nav-cta" style="width:100%;margin-top:1rem;padding:.8rem;font-size:.9rem;display:block;" onclick="scroll2Form(); document.getElementById('mob-menu').classList.remove('open');">Evaluación gratis →</button>
 </div>
 
@@ -195,6 +233,54 @@
   </div>
 </section>
 
+<!-- KIDS PROMO -->
+<section class="kids-promo" style="padding: 4rem 5%; background: linear-gradient(135deg, #1A2A44 0%, #0F1C36 100%); margin: 4rem auto; width: 90%; max-width: 1200px; border-radius: 30px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; gap: 4rem; flex-wrap: wrap; box-shadow: 0 20px 50px rgba(0,0,0,0.25);">
+  <div style="position: absolute; top: -30%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(241,196,15,0.15) 0%, rgba(241,196,15,0) 70%); border-radius: 50%; z-index: 1; pointer-events: none;"></div>
+  <div style="position: absolute; bottom: -20%; left: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(26,188,156,0.15) 0%, rgba(26,188,156,0) 70%); border-radius: 50%; z-index: 1; pointer-events: none;"></div>
+  
+  <div style="flex: 1 1 400px; z-index: 2;" class="r left">
+    <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(241, 196, 15, 0.1); color: #F1C40F; padding: 0.6rem 1.2rem; border-radius: 50px; font-size: 0.9rem; font-weight: 700; margin-bottom: 1.5rem; border: 1px solid rgba(241, 196, 15, 0.3);">
+      <span style="font-size: 1.2rem;">🌟</span> Programa Exclusivo
+    </div>
+    <h2 style="color: white; font-size: clamp(2.2rem, 4vw, 3rem); margin-bottom: 1.2rem; line-height: 1.15; font-weight: 800; letter-spacing: -1px; font-family: 'Poppins', sans-serif;">
+      El futuro de tus hijos habla inglés con <span style="color: #F1C40F; position: relative; display: inline-block;">One Talk Kids<svg style="position:absolute; bottom:-5px; left:0; width:100%; height:10px;" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" fill="transparent" stroke="#F1C40F" stroke-width="3" stroke-linecap="round"/></svg></span>
+    </h2>
+    <p style="color: rgba(255, 255, 255, 0.85); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem; font-family: 'Inter', sans-serif;">
+      No más aburrimiento ni clases colectivas. Nuestro método 1 a 1 está adaptado para que aprendan de forma natural, interactiva y muy divertida.
+    </p>
+    <ul style="list-style: none; padding: 0; margin-bottom: 2.5rem; display: flex; flex-direction: column; gap: 1rem; font-family: 'Inter', sans-serif;">
+      <li style="display: flex; align-items: center; gap: 12px; color: #fff; font-size: 1.05rem; font-weight: 500;">
+        <div style="min-width: 28px; height: 28px; background: rgba(241,196,15,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #F1C40F; font-weight:bold;">✓</div>
+        Docentes certificados en pedagogía infantil
+      </li>
+      <li style="display: flex; align-items: center; gap: 12px; color: #fff; font-size: 1.05rem; font-weight: 500;">
+        <div style="min-width: 28px; height: 28px; background: rgba(241,196,15,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #F1C40F; font-weight:bold;">✓</div>
+        Plataforma lúdica y simuladores divertidos
+      </li>
+      <li style="display: flex; align-items: center; gap: 12px; color: #fff; font-size: 1.05rem; font-weight: 500;">
+        <div style="min-width: 28px; height: 28px; background: rgba(241,196,15,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #F1C40F; font-weight:bold;">✓</div>
+        Reportes semanales para que midas su progreso
+      </li>
+    </ul>
+    <a href="kids.html" style="background: #F1C40F; color: #111; box-shadow: 0 10px 25px rgba(241, 196, 15, 0.3); font-size: 1.1rem; padding: 1rem 2rem; border-radius: 12px; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; text-decoration: none; font-weight: 700; font-family: 'Poppins', sans-serif;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 15px 30px rgba(241, 196, 15, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(241, 196, 15, 0.3)'">
+      Ver programa completo Kids <span style="font-size: 1.4rem; line-height: 1;">→</span>
+    </a>
+  </div>
+  
+  <div style="flex: 1 1 400px; position: relative; z-index: 2;" class="r right">
+    <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1);">
+      <img src="imagenes/hero_kids.png" alt="Aprendizaje para niños con One Talk Kids" style="width: 100%; height: auto; display: block; object-fit: cover; aspect-ratio: 4/3; object-position: center;">
+      <div style="position: absolute; bottom: 20px; right: 20px; background: rgba(255,255,255,0.95); padding: 12px 16px; border-radius: 16px; display: flex; align-items: center; gap: 12px; backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+        <img src="imagenes/onetalk_kids.png" alt="One Talk Kids Logo" style="height: 40px; width: auto; object-fit: contain;" onerror="this.src='imagenes/logo.png'">
+        <div>
+          <div style="font-weight: 800; color: #111; font-size: 0.95rem; font-family: 'Poppins', sans-serif;">Programa Kids</div>
+          <div style="font-size: 0.8rem; color: #555; font-weight: 500; font-family: 'Inter', sans-serif;">Para edades 7-14 años</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- INCLUDES -->
 <section class="includes">
   <div class="includes-inner">
@@ -220,6 +306,110 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- SUBSCRIPTIONS -->
+<section class="subscriptions" id="suscripciones" style="padding: 6rem 5%; background: #F8FAFC; text-align: center;">
+  <div class="sh r up" style="margin-bottom: 4rem;">
+    <div class="sh-tag" style="color: var(--teal)">Suscripciones One Talk</div>
+    <h2 style="color: var(--dark); font-size: 2.5rem;">Elige el nivel de acompañamiento que necesitas</h2>
+    <p style="color: #6B7280; font-size: 1.1rem; max-width: 600px; margin: 0.5rem auto 0;">Entrenamiento enfocado en conversación real, adaptado a tu ritmo y objetivos profesionales.</p>
+  </div>
+  
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; max-width: 1200px; margin: 0 auto;">
+    
+    <!-- EasyTalk -->
+    <div class="plan-card r scale" style="background: white; border-radius: 24px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #E5E7EB; text-align: left; display: flex; flex-direction: column;">
+      <div style="position: relative; height: 220px;">
+        <img src="imagenes/easytalk_plan.png" alt="EasyTalk Plan" style="width: 100%; height: 100%; object-fit: cover;">
+        <div style="position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.9); padding: 5px 10px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1)">
+          <img src="imagenes/official_logo.png" style="height: 20px; width: auto;">
+        </div>
+      </div>
+      <div style="padding: 2rem; flex: 1; display: flex; flex-direction: column;">
+        <div style="color: var(--teal); font-weight: 800; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase;">🔹 EasyTalk</div>
+        <h3 style="font-size: 1.4rem; color: var(--dark); margin: 0.5rem 0 1rem;">Construye una base sólida de comunicación</h3>
+        <p style="color: #6B7280; font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.5;">Un plan diseñado para desarrollar confianza y consistencia desde el inicio.</p>
+        <ul style="list-style: none; padding: 0; margin-bottom: 2rem; flex: 1;">
+          <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0.8rem; color: #4B5563; font-size: 0.95rem;">
+            <span style="color: var(--teal); font-weight: bold;">✓</span> 12 horas / mes
+          </li>
+          <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0.8rem; color: #4B5563; font-size: 0.95rem;">
+            <span style="color: var(--teal); font-weight: bold;">✓</span> 3 horas / semana
+          </li>
+          <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0.8rem; color: #4B5563; font-size: 0.95rem;">
+            <span style="color: var(--teal); font-weight: bold;">✓</span> Enfoque en fluidez inicial y seguridad al hablar
+          </li>
+        </ul>
+        <div style="background: #F3F4F6; padding: 1rem; border-radius: 12px; margin-bottom: 1.5rem; font-size: 0.9rem; color: #4B5563;">
+          <strong>Ideal para:</strong> iniciar o retomar tu proceso de comunicación en inglés
+        </div>
+        <button class="btn-orange" onclick="document.getElementById('cf-target').value='Adultos y Profesionales'; scroll2Form();" style="width: 100%; text-align: center; background: var(--teal); color: white; border: none; padding: 1rem; border-radius: 10px; font-weight: 700; cursor: pointer;">👉 Comenzar ahora</button>
+      </div>
+    </div>
+    
+    <!-- BetterTalk -->
+    <div class="plan-card featured r scale" style="background: white; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); border: 2px solid var(--orange); text-align: left; display: flex; flex-direction: column; transform: translateY(-10px);">
+      <div style="position: relative; height: 220px;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; background: var(--orange); color: white; text-align: center; font-weight: 700; font-size: 0.85rem; padding: 6px 0; z-index: 2;">MÁS POPULAR</div>
+        <img src="imagenes/bettertalk_plan.png" alt="BetterTalk Plan" style="width: 100%; height: 100%; object-fit: cover;">
+        <div style="position: absolute; top: 40px; right: 15px; background: rgba(255,255,255,0.9); padding: 5px 10px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1)">
+          <img src="imagenes/official_logo.png" style="height: 20px; width: auto;">
+        </div>
+      </div>
+      <div style="padding: 2rem; flex: 1; display: flex; flex-direction: column;">
+        <div style="color: var(--orange); font-weight: 800; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase;">⭐ BetterTalk</div>
+        <h3 style="font-size: 1.4rem; color: var(--dark); margin: 0.5rem 0 1rem;">Progreso constante con resultados medibles</h3>
+        <p style="color: #6B7280; font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.5;">Aumenta tu exposición al idioma y mejora tu capacidad de expresión de forma estructurada.</p>
+        <ul style="list-style: none; padding: 0; margin-bottom: 2rem; flex: 1;">
+          <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0.8rem; color: #4B5563; font-size: 0.95rem;">
+            <span style="color: var(--orange); font-weight: bold;">✓</span> 16 horas / mes
+          </li>
+          <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0.8rem; color: #4B5563; font-size: 0.95rem;">
+            <span style="color: var(--orange); font-weight: bold;">✓</span> 4 horas / semana
+          </li>
+          <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0.8rem; color: #4B5563; font-size: 0.95rem;">
+            <span style="color: var(--orange); font-weight: bold;">✓</span> Desarrollo de fluidez, vocabulario y precisión
+          </li>
+        </ul>
+        <div style="background: #FFF7ED; padding: 1rem; border-radius: 12px; margin-bottom: 1.5rem; font-size: 0.9rem; color: #9A3412;">
+          <strong>Ideal para:</strong> profesionales que buscan avanzar con mayor rapidez
+        </div>
+        <button class="btn-orange" onclick="document.getElementById('cf-target').value='Adultos y Profesionales'; scroll2Form();" style="width: 100%; text-align: center; border: none; padding: 1rem; border-radius: 10px; font-weight: 700; cursor: pointer;">👉 Impulsar mi nivel</button>
+      </div>
+    </div>
+    
+    <!-- MasterTalk -->
+    <div class="plan-card r scale" style="background: white; border-radius: 24px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #E5E7EB; text-align: left; display: flex; flex-direction: column;">
+      <div style="position: relative; height: 220px;">
+        <img src="imagenes/mastertalk_plan.png" alt="MasterTalk Plan" style="width: 100%; height: 100%; object-fit: cover;">
+        <div style="position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.9); padding: 5px 10px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1)">
+          <img src="imagenes/official_logo.png" style="height: 20px; width: auto;">
+        </div>
+      </div>
+      <div style="padding: 2rem; flex: 1; display: flex; flex-direction: column;">
+        <div style="color: var(--violet); font-weight: 800; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase;">🔹 MasterTalk</div>
+        <h3 style="font-size: 1.4rem; color: var(--dark); margin: 0.5rem 0 1rem;">Dominio del idioma en entornos profesionales</h3>
+        <p style="color: #6B7280; font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.5;">Una experiencia intensiva enfocada en comunicación efectiva, natural y estratégica.</p>
+        <ul style="list-style: none; padding: 0; margin-bottom: 2rem; flex: 1;">
+          <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0.8rem; color: #4B5563; font-size: 0.95rem;">
+            <span style="color: var(--violet); font-weight: bold;">✓</span> 20 horas / mes
+          </li>
+          <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0.8rem; color: #4B5563; font-size: 0.95rem;">
+            <span style="color: var(--violet); font-weight: bold;">✓</span> 5 horas / semana
+          </li>
+          <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0.8rem; color: #4B5563; font-size: 0.95rem;">
+            <span style="color: var(--violet); font-weight: bold;">✓</span> Perfeccionamiento de fluidez, claridad y comunicación profesional
+          </li>
+        </ul>
+        <div style="background: #F5F3FF; padding: 1rem; border-radius: 12px; margin-bottom: 1.5rem; font-size: 0.9rem; color: #5B21B6;">
+          <strong>Ideal para:</strong> presentaciones, entrevistas y contextos de alto nivel
+        </div>
+        <button class="btn-orange" onclick="document.getElementById('cf-target').value='Adultos y Profesionales'; scroll2Form();" style="width: 100%; text-align: center; background: var(--violet); color: white; border: none; padding: 1rem; border-radius: 10px; font-weight: 700; cursor: pointer;">👉 Alcanzar nivel profesional</button>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -384,7 +574,7 @@
       </div>
     </div>
     <div class="fc"><h4>Sitio</h4><a href="#problemas">Problemas</a><a href="#metodo">Metodología</a><a href="kids.html" style="color:var(--yellow);font-weight:700;">One Talk Kids</a></div>
-    <div class="fc"><h4>Suscripciones</h4><a href="#form-section">Planes Mensuales / Timestrales</a><a href="#form-section">Paquetes 12 hrs</a><a href="#form-section">Suscripción 6 Meses</a></div>
+    <div class="fc"><h4>Contacto</h4><a href="https://wa.link/7kezb1" target="_blank">📱 +57 310 792 7335</a><a href="mailto:info@onetalk.edu.co">📧 info@onetalk.edu.co</a><span style="color:rgba(255,255,255,.6);font-size:.9rem;line-height:1.5;">🌍 Academia Digital<br>Atención Internacional</span></div>
     <div class="fc"><h4>Legal</h4><a href="#" class="open-privacy-btn">Privacidad</a><a href="#" class="open-privacy-btn">Términos del Servicio</a></div>
   </div>
   <div class="footer-bar">© 2026 One Talk. Academia Digital de Idiomas.</div>
