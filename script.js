@@ -122,13 +122,7 @@ function prepararWhatsApp() {
     const nombre = document.getElementById('cf-name').value;
     const interes = document.getElementById('cf-target').value;
     
-    let mensaje = '';
-    // Mensaje adaptado según la solicitud comercial
-    if (document.querySelector('.kids-logo')) {
-      mensaje = `Hola, quiero agendar mi clase de cortesía de One Talk Kids y recibir una propuesta académica adaptada a mi nivel, horario y presupuesto. Mi nombre es ${nombre}.`;
-    } else {
-      mensaje = `Hola, quiero agendar mi clase de cortesía de onetalk y recibir una propuesta académica adaptada a mi nivel, horario y presupuesto. Mi nombre es ${nombre}.`;
-    }
+    const mensaje = 'Hola, quiero agendar mi clase de cortesía de onetalk y recibir una propuesta académica adaptada a mi nivel, horario y presupuesto';
     
     // Generamos el enlace con tu número: 573107927335
     const waLink = `https://wa.me/573107927335?text=${encodeURIComponent(mensaje)}`;
