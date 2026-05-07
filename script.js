@@ -122,7 +122,7 @@ function prepararWhatsApp() {
     const nombre = document.getElementById('cf-name').value;
     const interes = document.getElementById('cf-target').value;
     
-    const mensaje = 'Hola, quiero agendar mi clase de cortesía de onetalk y recibir una propuesta académica adaptada a mi nivel, horario y presupuesto';
+    const mensaje = 'Hola, quiero agendar mi clase de cortesía de OneTalk y recibir una propuesta académica adaptada a mi nivel, horario y presupuesto.';
     
     // Generamos el enlace con tu número: 573107927335
     const waLink = `https://wa.me/573107927335?text=${encodeURIComponent(mensaje)}`;
